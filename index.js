@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const tasksRoute = require("./routes/tasks");
+require('dotenv').config();
+
 
 const app = express(); // Define app first
 
@@ -10,7 +12,7 @@ app.use(cors());
 app.use(express.json()); // parse JSON
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URL || "mongodb://localhost:27017/taskDB", {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
