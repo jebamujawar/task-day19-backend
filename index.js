@@ -1,6 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const corsOptions = {
+  origin: "https://tubular-puffpuff-e5430c.netlify.app",
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
 const tasksRoute = require("./routes/tasks");
 require('dotenv').config();
 
